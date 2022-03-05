@@ -1,0 +1,12 @@
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\bin\Debug\net5.0\Loan.Data.deps.json
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\bin\Debug\net5.0\Loan.Data.dll
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\bin\Debug\net5.0\Loan.Data.pdb
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.csproj.AssemblyReference.cache
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.AssemblyInfoInputs.cache
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.AssemblyInfo.cs
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.csproj.CoreCompileInputs.cache
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.dll
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\ref\Loan.Data.dll
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\Loan.Data.pdb
+C:\Users\nickp\source\repos\LoanAPI\Loan.Data\obj\Debug\net5.0\refint\Loan.Data.dll

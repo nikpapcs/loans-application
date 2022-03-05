@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Library";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Inputs</h2>
+        <input type="text" name="id" id="id" class="form-control" placeholder="Id">
+        <input type="text" name="type" id="Type" class="form-control" placeholder="Type of Loan">
+        <input type="text" name="rate" id="rate" class="form-control" placeholder="Loan Rate">
+        <input type="text" name="amount" id="amount" class="form-control" placeholder="Loan Amount">
+        <input type="text" name="repaymentyears" id="repaymentyears" class="form-control" placeholder="Repayment Years">
+
+    </div>
+
+
+    <div class="col-md-3">
+        <h2>Actions</h2>
+        <button type="button" id="GetAll" class="btn btn-default">Get All Loans</button>
+        <br />
+        <br />
+        <button type="button" id="GetById" class="btn btn-default">Get Loan by ID</button>
+        <br />
+        <br />
+        <button type="button" id="AddBook" class="btn btn-default">Add a Loan</button>
+        <br />
+        <br />
+        <button type="button" id="UpdateBook" class="btn btn-default">Update Loan</button>
+
+    </div>
+
+
+    <div class="col-md-4">
+        <h2>Input Person</h2>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+        <input type="text" name="surname" id="surname" class="form-control" placeholder="surname">
+        <input type="text" name="income" id="income" class="form-control" placeholder="income">
+
+        <br />
+        <button type="button" id="AddCost" class="btn btn-default">Add Person</button>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h1>Results</h1>
+        <p id="result"></p>
+    </div>
+</div>
+
+<p></p>
+<div class="row">
+    <div>
+        <table id="loansTable" border="0" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>rate</th>
+                <th>amount</th>
+                <th>repaymentyears</th>
+                <th>name</th>
+                <th>surname</th>
+                <th>income</th>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
