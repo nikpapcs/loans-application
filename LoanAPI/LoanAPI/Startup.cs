@@ -22,6 +22,7 @@ namespace LoanAPI
     {
         public Startup(IConfiguration configuration)
         {
+            
             Configuration = configuration;
         }
 
