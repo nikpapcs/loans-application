@@ -80,5 +80,5 @@ pipeline:
                                     connectorRef: account.bootcampaws
                                     region: eu-west-1
                                     bucket: harness-dotnet-artifact
-                                    sourcePath: <+pipeline.stages.build.spec.execution.steps.Build-Package.output.outputVariables.packageName>
-                                    target: releases/<+pipeline.stages.build.spec.execution.steps.Build-Package.output.outputVariables.packageName>
+                                    sourcePath: <+pipeline.stages.ASPNETBuild.spec.execution.steps.BuildPackage.output.outputVariables.packageName>
+                                    target: releases/<+pipeline.stages.ASPNETBuild.spec.execution.steps.BuildPackage.output.outputVariables.packageName>
