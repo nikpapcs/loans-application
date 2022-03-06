@@ -1,0 +1,33 @@
+# Download MSBuild
+$MSBuildUrl = "https://aka.ms/vs/17/release/vs_BuildTools.exe"
+$MSBuildInstaller = "$env:TEMP\vs_BuildTools.exe"
+Invoke-WebRequest -OutFile "$MSBuildInstaller" $MSBuildUrl
+
+# Install MSBuild
+Write-Host "Installing MSBuild packages"
+$installPath = "$env:USERPROFILE\MSBuild"
+Start-Process -FilePath "$MSBuildInstaller" `
+    -Verb RunAs `
+    -Wait `
+    -PassThru `
+    -ArgumentList `
+        "--installPath $installPath `
+        --add Microsoft.Net.ComponentGroup.DevelopmentPrerequisites `
+        --add Microsoft.Net.Component.4.8.SDK `
+        --add Microsoft.VisualStudio.Component.WebDeploy `
+        --add Microsoft.VisualStudio.Workload.WebBuildTools `
+        --add Microsoft.Net.Component.4.8.TargetingPack	 `
+        --add Microsoft.Net.ComponentGroup.4.8.DeveloperTools `
+        --add Microsoft.VisualStudio.Workload.MSBuildTools `
+        --add Microsoft.VisualStudio.Web.BuildTools.ComponentGroup `
+        --includeRecommended `
+        --includeOptional `
+        --norestart `
+        --quiet `
+        --force"
+ 
+# Download & install dotnet
+Write-Host "Installing dotnet"
+$dotNetInstaller = "$env:USERPROFILE\dotnet-install.ps1"
+Invoke-WebRequest -OutFile $dotNetInstaller 'https://dot.net/v1/dotnet-install.ps1'
+&powershell -NoProfile -ExecutionPolicy unrestricted $dotNetInstaller -Channel LTS
