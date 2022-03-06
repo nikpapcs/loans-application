@@ -70,3 +70,13 @@ pipeline:
                                         serviceName: <+pipeline.name>
                                         releaseNo: <+pipeline.sequenceId>
                                     shell: Powershell
+                          - step:
+                                type: S3Upload
+                                name: upload-to-s3
+                                identifier: uploadtos3
+                                spec:
+                                    connectorRef: account.bootcampaws
+                                    region: eu-west-1
+                                    bucket: harness-dotnet-artifact
+                                    sourcePath: <+pipeline.stages.build.spec.execution.steps.Build-Package.output.outputVariables.packageName>
+                                    target: releases/<+pipeline.stages.build.spec.execution.steps.Build-Package.output.outputVariables.packageName>
