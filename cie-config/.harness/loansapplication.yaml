@@ -69,6 +69,8 @@ pipeline:
                                     envVariables:
                                         serviceName: <+pipeline.name>
                                         releaseNo: <+pipeline.sequenceId>
+                                    outputVariables:
+                                        - name: packageName
                                     shell: Powershell
                           - step:
                                 type: S3Upload
