@@ -1,0 +1,42 @@
+pipeline:
+    name: loans-application
+    identifier: loansapplication
+    allowStageExecutions: false
+    projectIdentifier: trainingcinikp1
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: nikpapcsgit
+                repoName: loans-application
+                build: <+input>
+    stages:
+        - stage:
+              name: ASPNET-Build
+              identifier: ASPNETBuild
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: VM
+                      spec:
+                          type: Pool
+                          spec:
+                              identifier: windows
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: XUnitTests
+                                identifier: XUnitTests
+                                spec:
+                                    command: |
+                                        cd LoanAPI
+                                        dotnet test "C:\harness\LoanAPI\XUnitTestProject\bin\Debug\net5.0\XUnitTestProject.dll" --logger:"junit;LogFileName=test-results.xml"
+                                    reports:
+                                        type: JUnit
+                                        spec:
+                                            paths:
+                                                - "**/*.xml"
+                                    shell: Powershell
