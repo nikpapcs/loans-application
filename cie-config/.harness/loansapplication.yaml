@@ -40,3 +40,33 @@ pipeline:
                                             paths:
                                                 - "**/*.xml"
                                     shell: Powershell
+                          - step:
+                                type: Run
+                                name: Build-Package
+                                identifier: BuildPackage
+                                spec:
+                                    command: |
+                                        
+
+                                        # Build
+                                        $serviceName = $env:serviceName
+                                        $releaseNo = $env:releaseNo
+                                        $packageFolder = "C:\harness"
+                                        $packageName = "$serviceName-$releaseNo.zip"
+
+                                        # Add new binaries to PATH
+                                        $env:PATH += ';C:\Users\Administrator\MSBuild\MSBuild\Current\Bin;;C:\Users\Administrator\AppData\Local\Microsoft\dotnet'
+
+                                        # Go to the project folder
+                                        cd LoanAPI
+
+                                        # Run MSBuild
+                                        dotnet build -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=FolderProfile -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:Version=1.2.3.4 --output "$packageFolder\$packageName"
+
+
+                                        Compress-Archive $packageFolder\$packageName* $packageFolder\$packageName.zip
+                                        $env:packageName = "$packageFolder\$packageName.zip"
+                                    envVariables:
+                                        serviceName: <+pipeline.name>
+                                        releaseNo: <+pipeline.sequenceId>
+                                    shell: Powershell
