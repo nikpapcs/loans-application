@@ -1,0 +1,23 @@
+connector:
+  name: nikpapcs-git
+  identifier: nikpapcsgit
+  description:
+  orgIdentifier: default
+  projectIdentifier: trainingcinikp1
+  type: Github
+  spec:
+    url: https://github.com/nikpapcs
+    validationRepo: loans-application
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: nikpapcs
+          tokenRef: nikpapcsgit
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: nikpapcsgit
+    executeOnDelegate: false
+    type: Account
